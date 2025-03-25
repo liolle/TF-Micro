@@ -1,4 +1,5 @@
 using DotNetEnv;
+using Order.services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ Env.Load();
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddSingleton<IOrderService,OrderService>();
 
 var app = builder.Build();
 

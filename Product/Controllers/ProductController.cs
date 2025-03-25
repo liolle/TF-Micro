@@ -10,4 +10,12 @@ public class ProductController : ControllerBase
   {
     return Ok("Product list");
   }
+
+  [HttpGet("{id}")]
+  [Route("/product/{id}")]
+  public IActionResult GetById(int id)
+  {
+    return Ok($"You seleceted the product {id}");
+  }
+
 }
