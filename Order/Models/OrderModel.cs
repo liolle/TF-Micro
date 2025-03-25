@@ -23,7 +23,7 @@ public class OrderM{
 
   public bool AddNew(List<OrderModel> orders){
     Random rd = new();
-    int id = rd.Next();
+    int id;
     do
     {
       id = rd.Next();
